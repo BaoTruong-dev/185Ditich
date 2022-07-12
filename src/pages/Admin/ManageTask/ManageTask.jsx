@@ -1,0 +1,67 @@
+import React from 'react';
+import data_table_svg from '../../../assets/img/Data_table.svg';
+import TaskInfo from '../../../components/TaskInfo/TaskInfo';
+import addTasks_svg from '../../../assets/img/AddTasks.svg';
+import carbonDoc_svg from '../../../assets/img/Carbon_Document.svg';
+import building_svg from '../../../assets/img/Building.svg';
+import './manageTask.scss';
+export default function ManageTask() {
+    return (
+        <div className='manage-task'>
+            <div className="container">
+                <div className="manage-task__head">
+                    <p className="title">NHIỆM VỤ</p>
+                    <div className="icon-group">
+                        <div className="img">
+                            <img src={data_table_svg} alt="" />
+                        </div>
+                        <p>Xem theo bảng</p>
+                    </div>
+                </div>
+                <div className="manage-task__status">
+                    <div className="status-item">
+                        <p className='text'>Chưa xem</p>
+                        <div className="num">4</div>
+                    </div>
+                    <div className="status-item">
+                        <p className='text'>Đang thực hiện</p>
+                        <div className="num">1</div>
+                    </div>
+                    <div className="status-item">
+                        <p className='text'>Hoàn thành</p>
+                        <div className="num">3</div>
+                    </div>
+                    <div className="status-item">
+                        <p className='text'>Trễ</p>
+                        <div className="num">2</div>
+                    </div>
+                </div>
+                <div className="manage-task__board">
+                    <div className="manage-task__board--wrapper">
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 2' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 8' src={building_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
+                    </div>
+                    <div className="manage-task__board--wrapper">
+                        <TaskInfo title='Báo cáo hồ sơ tháng 1' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='8' />
+                    </div>
+                    <div className="manage-task__board--wrapper">
+                        <TaskInfo title='Báo cáo hồ sơ tháng 9' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='11' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                    </div>
+                    <div className="manage-task__board--wrapper">
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                    </div>
+                </div>
+                <div className="manage-task__add">
+                    <div className="img">
+                        <img src={addTasks_svg} alt="addtask_svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

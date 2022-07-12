@@ -131,13 +131,36 @@
       }
     }
     &--table {
+      thead {
+        tr {
+          th {
+            background-color: rgba(155, 246, 64, 0.08);
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            &:nth-child(1) {
+              color: #4068f6;
+            }
+            &:nth-child(8) {
+              color: #219653;
+            }
+          }
+        }
+      }
       td:not(:first-child, :nth-child(7)) {
         text-align: unset;
       }
       td:last-child {
-        display: flex;
-        justify-content: center;
         cursor: pointer;
+        img {
+          margin: auto;
+        }
       }
     }
   }

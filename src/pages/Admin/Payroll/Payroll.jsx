@@ -6,11 +6,48 @@ import date_svg from '../../../assets/img/Date.svg';
 import vector_svg from '../../../assets/img/Vector.svg';
 import shape_svg from '../../../assets/img/Shape.svg';
 import eye_svg from '../../../assets/img/eye.svg';
-
+import { useDispatch, useSelector } from 'react-redux/es/exports';
 
 import './payroll.scss';
+import Modal from '../../../components/Modal/Modal';
+import PopupPayroll from '../../../components/PopupPayroll/PopupPayroll';
 const { TabPane } = Tabs;
 export default function Payroll() {
+    const [visible, setVisible] = useState(false);
+    const { isPopup } = useSelector(store => store.popup);
+    const dispatch = useDispatch();
+    const handleMenuClick = (e) => {
+    };
+    const handlePopup = () => {
+        dispatch({
+            type: 'OPENED_POPUP',
+        });
+    };
+    const handleVisibleChange = (flag) => {
+        setVisible(flag);
+    };
+    const onChange = (key) => {
+        console.log(key);
+    };
+    const menu = (
+        <Menu
+            onClick={handleMenuClick}
+            items={[
+                {
+                    label: 'Lâm Thiếu Kỳ',
+                    key: '1',
+                },
+                {
+                    label: 'Nguyễn Quang',
+                    key: '2',
+                },
+                {
+                    label: 'Phan Anh',
+                    key: '3',
+                },
+            ]}
+        />
+    );
     const columns = [
         {
             title: 'Stt',
@@ -82,7 +119,7 @@ export default function Payroll() {
             subsidize: '1.700.000 VND',
             workingDays: '24',
             totalIncome: '14.100.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '2',
@@ -94,7 +131,7 @@ export default function Payroll() {
             subsidize: '1.500.000 VND',
             workingDays: '24',
             totalIncome: '11.200.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '3',
@@ -106,7 +143,7 @@ export default function Payroll() {
             subsidize: '1.500.000 VND',
             workingDays: '24',
             totalIncome: '11.200.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '4',
@@ -118,7 +155,7 @@ export default function Payroll() {
             subsidize: '800.000 VND',
             workingDays: '24',
             totalIncome: '8.000.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '5',
@@ -130,7 +167,7 @@ export default function Payroll() {
             subsidize: '800.000 VND',
             workingDays: '24',
             totalIncome: '8.000.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '6',
@@ -142,7 +179,7 @@ export default function Payroll() {
             subsidize: '800.000 VND',
             workingDays: '24',
             totalIncome: '8.000.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
         {
             key: '7',
@@ -154,41 +191,15 @@ export default function Payroll() {
             subsidize: '800.000 VND',
             workingDays: '24',
             totalIncome: '8.000.000 VND',
-            details: <img src={eye_svg}></img>,
+            details: <img src={eye_svg} onClick={handlePopup}></img>,
         },
     ];
-    const [visible, setVisible] = useState(false);
-
-    const handleMenuClick = (e) => {
-    };
-
-    const handleVisibleChange = (flag) => {
-        setVisible(flag);
-    };
-    const onChange = (key) => {
-        console.log(key);
-    };
-    const menu = (
-        <Menu
-            onClick={handleMenuClick}
-            items={[
-                {
-                    label: 'Lâm Thiếu Kỳ',
-                    key: '1',
-                },
-                {
-                    label: 'Nguyễn Quang',
-                    key: '2',
-                },
-                {
-                    label: 'Phan Anh',
-                    key: '3',
-                },
-            ]}
-        />
-    );
     return (
         <div className='payroll'>
+            {isPopup &&
+                <Modal>
+                    <PopupPayroll />
+                </Modal>}
             <div className="container">
                 <h2>Bảng thanh toán lương</h2>
                 <div className="payroll__filter">

@@ -1,27 +1,25 @@
-import './App.scss';
 import React from 'react';
-import { createBrowserHistory } from "history";
-import { Routes, Route, BrowserRouter, useNavigate } from 'react-router-dom';
-import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
-import Login from './pages/Login/Login';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.scss';
 import AdminHome from './pages/Admin/AdminHome/AdminHome';
-import Register from './pages/Admin/Register/Register';
-import UserHome from './pages/User/UserHome/UserHome';
+import Documentary from './pages/Admin/Documentary/Documentary';
+import DrawingBuilding from './pages/Admin/DrawingBuilding/DrawingBuilding';
+import DrawingOverView from './pages/Admin/DrawingOverView/DrawingOverView';
 import Edit from './pages/Admin/Edit/Edit';
 import Information from './pages/Admin/Information/Information';
-import DocumentHome from './pages/Document/DocumentHome/DocumentHome';
+import ManageTask from './pages/Admin/ManageTask/ManageTask';
 import OverView from './pages/Admin/OverView/OverView';
-import DrawingOverView from './pages/Admin/DrawingOverView/DrawingOverView';
-import DrawingBuilding from './pages/Admin/DrawingBuilding/DrawingBuilding';
 import Payroll from './pages/Admin/Payroll/Payroll';
-import PopupPayroll from './components/PopupPayroll/PopupPayroll';
+import Register from './pages/Admin/Register/Register';
+import DocumentHome from './pages/Document/DocumentHome/DocumentHome';
+import Login from './pages/Login/Login';
+import UserHome from './pages/User/UserHome/UserHome';
+import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
 
 
 
 
 function App() {
-
-
   return (
     <BrowserRouter>
       <Routes >
@@ -34,7 +32,10 @@ function App() {
           <Route path='drawingoverview' element={<DrawingOverView />}></Route>
           <Route path='drawingbuilding' element={<DrawingBuilding />}></Route>
           <Route path='payroll' element={<Payroll />}></Route>
-          <Route path='popup' element={<PopupPayroll />}></Route>
+          <Route path='documentary' element={<Documentary />}></Route>
+          <Route path='managetask' element={<ManageTask />}></Route>
+
+
         </Route>
 
         <Route path='user' element={<AdminTemplate />}>
