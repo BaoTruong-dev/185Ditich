@@ -130,5 +130,15 @@
         color: #807d9b;
       }
     }
+    &--table {
+      td:not(:first-child, :nth-child(7)) {
+        text-align: unset;
+      }
+      td:last-child {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
   }
 }

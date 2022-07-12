@@ -14,6 +14,7 @@ import OverView from './pages/Admin/OverView/OverView';
 import DrawingOverView from './pages/Admin/DrawingOverView/DrawingOverView';
 import DrawingBuilding from './pages/Admin/DrawingBuilding/DrawingBuilding';
 import Payroll from './pages/Admin/Payroll/Payroll';
+import PopupPayroll from './components/PopupPayroll/PopupPayroll';
 
 
 
@@ -33,8 +34,7 @@ function App() {
           <Route path='drawingoverview' element={<DrawingOverView />}></Route>
           <Route path='drawingbuilding' element={<DrawingBuilding />}></Route>
           <Route path='payroll' element={<Payroll />}></Route>
-
-
+          <Route path='popup' element={<PopupPayroll />}></Route>
         </Route>
 
         <Route path='user' element={<AdminTemplate />}>
