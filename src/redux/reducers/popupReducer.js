@@ -1,5 +1,6 @@
 const initialValue = {
-    isPopup: false
+    isPopup: false,
+    isPopupReport: false
 };
 
 const popupReducer = (state = initialValue, action) => {
@@ -13,6 +14,16 @@ const popupReducer = (state = initialValue, action) => {
             return {
                 ...state,
                 isPopup: false
+            };
+        case 'OPENED_POPUP_REPORT':
+            return {
+                ...state,
+                isPopupReport: true
+            };
+        case 'CLOSED_POPUP_REPORT':
+            return {
+                ...state,
+                isPopupReport: false
             };
     }
     return state;

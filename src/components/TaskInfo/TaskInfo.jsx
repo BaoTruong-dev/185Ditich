@@ -1,8 +1,8 @@
 import React from 'react';
 import './taskInfo.scss';
-export default function TaskInfo({ title, src, nameRoom, expired, rest }) {
+export default function TaskInfo({ title, src, nameRoom, expired, rest, ...allRest }) {
     return (
-        <div className="task-info">
+        <div className="task-info" {...allRest}>
             <div className="title">
                 {title}
             </div>

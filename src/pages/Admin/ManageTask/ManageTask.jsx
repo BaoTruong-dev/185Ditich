@@ -5,9 +5,24 @@ import addTasks_svg from '../../../assets/img/AddTasks.svg';
 import carbonDoc_svg from '../../../assets/img/Carbon_Document.svg';
 import building_svg from '../../../assets/img/Building.svg';
 import './manageTask.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import Modal from '../../../components/Modal/Modal';
+import PopupReport from '../../../components/PopupReport/PopupReport';
 export default function ManageTask() {
+    const dispatch = useDispatch();
+    const { isPopupReport } = useSelector(store => store.popup);
+    const handlePopup = () => {
+        console.log(isPopupReport);
+        dispatch({
+            type: 'OPENED_POPUP_REPORT'
+        });
+    };
     return (
-        <div className='manage-task'>
+        <div className={`manage-task`}>
+            {isPopupReport &&
+                <Modal>
+                    <PopupReport />
+                </Modal>}
             <div className="container">
                 <div className="manage-task__head">
                     <p className="title">NHIỆM VỤ</p>
@@ -38,22 +53,22 @@ export default function ManageTask() {
                 </div>
                 <div className="manage-task__board">
                     <div className="manage-task__board--wrapper">
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 2' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 8' src={building_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 2' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 8' src={building_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='18' />
                     </div>
                     <div className="manage-task__board--wrapper">
-                        <TaskInfo title='Báo cáo hồ sơ tháng 1' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='8' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 1' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='8' />
                     </div>
                     <div className="manage-task__board--wrapper">
-                        <TaskInfo title='Báo cáo hồ sơ tháng 9' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='11' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 9' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='11' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={building_svg} nameRoom='Phòng HC-TH' expired='28/07/2022' rest='18' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
                     </div>
                     <div className="manage-task__board--wrapper">
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
-                        <TaskInfo title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
+                        <TaskInfo onClick={handlePopup} title='Báo cáo hồ sơ tháng 7' src={carbonDoc_svg} nameRoom='Phòng LHSDT' expired='28/07/2022' rest='15' />
                     </div>
                 </div>
                 <div className="manage-task__add">

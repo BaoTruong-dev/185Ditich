@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
+import PopupReport from './components/PopupReport/PopupReport';
 import AdminHome from './pages/Admin/AdminHome/AdminHome';
 import Documentary from './pages/Admin/Documentary/Documentary';
 import DrawingBuilding from './pages/Admin/DrawingBuilding/DrawingBuilding';
@@ -34,6 +35,8 @@ function App() {
           <Route path='payroll' element={<Payroll />}></Route>
           <Route path='documentary' element={<Documentary />}></Route>
           <Route path='managetask' element={<ManageTask />}></Route>
+          <Route path='popupreport' element={<PopupReport />}></Route>
+
 
 
         </Route>
