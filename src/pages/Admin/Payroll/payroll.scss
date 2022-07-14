@@ -84,6 +84,11 @@
     }
   }
   &__tabs {
+    background-color: white;
+    box-shadow: -1px -1px 17px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px -1px 17px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px -1px 17px -5px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
     .ant-tabs-tab {
       padding: 15px 35px;
       font-size: 16px;
@@ -151,6 +156,11 @@
               color: #219653;
             }
           }
+        }
+        tr:nth-child(2),
+        tr:nth-child(4),
+        tr:nth-child(6) {
+          background-color: rgba(155, 246, 64, 0.08);
         }
       }
       td:not(:first-child, :nth-child(7)) {

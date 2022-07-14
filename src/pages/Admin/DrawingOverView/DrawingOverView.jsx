@@ -4,9 +4,10 @@ import drawing_overview from '../../../assets/img/drawing/drawing_overview.jpg';
 import './drawingOverView.scss';
 export default function DrawingOverView() {
     return (
-        <div className="drawing-overview">
+        <div className="drawing-overview --relics">
+            <h2>Di tích lịch sử Địa đạo Củ Chi</h2>
             <div className="container">
-                <div className="drawing-overview__view">
+                <div className="drawing-overview__view --view">
                     <ViewGroup content='Xem chi tiết' />
                     <ViewGroup content='Xem bản vẽ kĩ thuật' />
                 </div>

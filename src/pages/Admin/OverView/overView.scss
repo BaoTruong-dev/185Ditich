@@ -1,16 +1,15 @@
 @import "../../../App.scss";
 .over-view {
   padding: 24px 0;
+
   &__view {
     display: flex;
+
     .view-group {
       margin-right: 48px;
     }
   }
   &__info {
-    .introduce-info {
-      margin-top: 64px;
-    }
   }
   .line {
     position: relative;

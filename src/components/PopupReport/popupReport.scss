@@ -13,6 +13,7 @@
   -moz-box-shadow: -3px 4px 33px 0px rgba(0, 0, 0, 0.75);
   max-width: 870px;
   max-height: 862px;
+  border-radius: 8px;
   .title {
     font-weight: 500;
     font-size: 12px;
@@ -215,14 +216,24 @@
       justify-content: center;
       min-width: 120px;
       cursor: pointer;
+      transition: 0.4s;
       &.--edit {
         border: 1px solid #1a48e9;
         color: #1a48e9;
         margin-right: 16px;
+        &:hover {
+          background-color: #1a48e9;
+          color: white;
+        }
       }
       &.--done {
         background-color: #1a48e9;
         color: white;
+        border: 1px solid #1a48e9;
+        &:hover {
+          background-color: white;
+          color: #1a48e9;
+        }
       }
     }
   }

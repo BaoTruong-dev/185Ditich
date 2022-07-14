@@ -9,7 +9,7 @@ import paginateArrow from '../../../assets/img/PaginateArrow.svg';
 
 export default function Documentary() {
     return (
-        <div className='documentary'>
+        <div className='documentary --relics'>
             <div className="container">
                 <div className="documentary__head">
                     <div className="left">

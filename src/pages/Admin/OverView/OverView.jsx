@@ -15,9 +15,10 @@ import './overView.scss';
 export default function OverView() {
     return (
         <>
-            <div className="over-view">
+            <div className="over-view --relics">
+                <h2>Di tích lịch sử Địa đạo Củ chi</h2>
                 <div className="container">
-                    <div className="over-view__view">
+                    <div className="over-view__view --view">
                         <ViewGroup content="Xem bản đồ khoanh vùng" />
                         <ViewGroup content="Xem bản đồ kĩ thuật" />
                     </div>

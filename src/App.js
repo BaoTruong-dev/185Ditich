@@ -35,7 +35,7 @@ function App() {
           <Route path='payroll' element={<Payroll />}></Route>
           <Route path='documentary' element={<Documentary />}></Route>
           <Route path='managetask' element={<ManageTask />}></Route>
-          <Route path='popupreport' element={<PopupReport />}></Route>
+          {/* <Route path='popupreport' element={<PopupReport />}></Route> */}
 
 
 

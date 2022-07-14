@@ -130,7 +130,7 @@ export default function PopupPayroll() {
                 </div>
                 <div className="popupdetails-salary__history">
                     <p className="title">Lịch sử thanh toán</p>
-                    <Table columns={columns} dataSource={data} size="middle" />
+                    <Table columns={columns} dataSource={data} size="middle" pagination={false} />
                 </div>
             </div>
         </div>

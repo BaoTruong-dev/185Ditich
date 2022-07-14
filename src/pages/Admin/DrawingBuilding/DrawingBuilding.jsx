@@ -6,9 +6,10 @@ import './drawingBuilding.scss';
 
 export default function DrawingBuilding() {
     return (
-        <div className="drawing-building">
+        <div className="drawing-building --relics">
+            <h2>Di tích lịch sử Địa đạo Củ Chi</h2>
             <div className="container">
-                <div className="drawing-building__view">
+                <div className="drawing-building__view --view">
                     <ViewGroup content='Xem chi tiết' />
                     <ViewGroup content='Xem bản đồ khoanh vùng' />
                 </div>
